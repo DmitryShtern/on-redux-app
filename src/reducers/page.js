@@ -1,16 +1,23 @@
+import { combineReducers } from "redux"
 import { SET_YEAR } from "../constants/Page"
 
-const initialState = {
-  year: 2016,
-  photos: [],
-}
-
-export default function page(state = initialState, action) {
+function year(state = 2016, action) {
   switch (action.type) {
     case SET_YEAR:
-      return { ...state, year: action.payload }
-
+      return action.payload
     default:
       return state
   }
 }
+
+function photos(state = [], action) {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+
+export default combineReducers({
+  year,
+  photos,
+})

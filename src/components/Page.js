@@ -2,8 +2,8 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 export default class Page extends Component {
-  onYearBtnClick(e) {
-    this.props.setYear(+e.target.textContent)
+  onYearBtnClick(year, e) {
+    this.props.setYear(year)
   }
 
   render() {
@@ -12,9 +12,9 @@ export default class Page extends Component {
     return (
       <div>
         <p>
-          <button onClick={this.onYearBtnClick.bind(this)}>2016</button>
-          <button onClick={this.onYearBtnClick.bind(this)}>2015</button>
-          <button onClick={this.onYearBtnClick.bind(this)}>2014</button>
+          <button onClick={this.onYearBtnClick.bind(this, 2016)}>2016</button>
+          <button onClick={this.onYearBtnClick.bind(this, 2015)}>2015</button>
+          <button onClick={this.onYearBtnClick.bind(this, 2014)}>2014</button>
         </p>
         <h3>{year} год</h3>
         <p>У тебя {photos.length} фото.</p>
